@@ -10,11 +10,12 @@
 
 <script>
 import { ref, reactive } from "@vue/reactivity";
+import colorManager from "../composables/game-manager"
 
 export default {
   setup() {
-    const colors = ["green", "red", "blue", "purple"];
-    let message = ref("Pick a color...");
+
+const {colors, message} = colorManager()
 
     const matchColor = (value) => {
       // do a random color based on the array index;
